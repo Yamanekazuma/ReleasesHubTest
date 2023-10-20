@@ -15,3 +15,13 @@ plugins {
     alias(libs.plugins.firebase.crashlytics) apply false
     alias(libs.plugins.dagger.hilt) apply false
 }
+
+releasesHub {
+    pullRequestEnabled = true
+    gitHubRepositoryOwner = "Yamanekazuma"
+    gitHubRepositoryName = "ReleasesHubTest"
+    autoDetectDependenciesPaths = true
+    pullRequestLabels = listOf("environment", "releaseshub")
+    pullRequestReviewers = listOf("Yamanekazuma")
+    baseBranch = "main"
+}
