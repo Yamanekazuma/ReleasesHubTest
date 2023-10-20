@@ -6,6 +6,7 @@ buildscript {
 }
 
 plugins {
+    alias(libs.plugins.releasehub)
     alias(libs.plugins.android.application) apply false
     alias(libs.plugins.android.library) apply false
     alias(libs.plugins.kotlin.android) apply false
@@ -13,4 +14,14 @@ plugins {
     alias(libs.plugins.gms.google.services) apply false
     alias(libs.plugins.firebase.crashlytics) apply false
     alias(libs.plugins.dagger.hilt) apply false
+}
+
+releasesHub {
+    pullRequestEnabled = true
+    gitHubRepositoryOwner = "Yamanekazuma"
+    gitHubRepositoryName = "ReleasesHubTest"
+    autoDetectDependenciesPaths = true
+    pullRequestLabels = listOf("environment", "releaseshub")
+    pullRequestReviewers = listOf("Yamanekazuma")
+    baseBranch = "main"
 }
